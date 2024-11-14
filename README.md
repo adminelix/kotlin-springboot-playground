@@ -1,11 +1,11 @@
 - add ktlint
 - add testcontainers config with postgresql sample
+- add pre-commit hook to reformat by ktlint
+- sample changelog
 
 - sample api
 - sample rest assured test
-- sample changelog
 - add openapi
-- add pre-commit hook to reformat by ktlint
 - add /info endpoint
 - add exceptions with error codes
 - add monads for error handling at least

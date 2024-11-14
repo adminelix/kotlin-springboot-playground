@@ -56,3 +56,25 @@ allOpen {
 tasks.withType<Test> {
     useJUnitPlatform()
 }
+
+tasks.register<Delete>("cleanGitHooks") {
+    delete(
+        fileTree(".git/hooks").matching {
+            include("*")
+            exclude("*.sample")
+        },
+    )
+}
+
+tasks.register<Copy>("installGitHooks") {
+    dependsOn("cleanGitHooks")
+    from(File(rootProject.rootDir, ".githooks"))
+    into(File(rootProject.rootDir, ".git/hooks"))
+    filePermissions {
+        unix("rwxr-xr-x")
+    }
+}
+
+tasks.assemble {
+    dependsOn("installGitHooks")
+}
