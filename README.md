@@ -3,6 +3,7 @@
 - add pre-commit hook to reformat by ktlint
 - sample changelog
 - build docker image of that app
+- use jetty instead of tomcat
 
 - sample api
 - sample rest assured test
@@ -12,4 +13,3 @@
 - add monads for error handling at least
 - add commit log to /info
 - configure actuator/health with db dependency
-- use jetty instead of tomcat
