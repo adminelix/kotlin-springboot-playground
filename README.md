@@ -12,3 +12,4 @@
 - add monads for error handling at least
 - add commit log to /info
 - configure actuator/health with db dependency
+- use jetty instead of tomcat
