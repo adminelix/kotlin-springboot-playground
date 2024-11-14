@@ -2,6 +2,7 @@
 - add testcontainers config with postgresql sample
 - add pre-commit hook to reformat by ktlint
 - sample changelog
+- build docker image of that app
 
 - sample api
 - sample rest assured test
