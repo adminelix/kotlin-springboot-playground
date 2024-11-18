@@ -1,4 +1,11 @@
 #!/bin/sh
 
+staged_files=$(git diff --cached --name-only --diff-filter=ACM)
+
 ./gradlew ktlintFormat
-git add -u
+
+for file in $staged_files; do
+    if [ -f "$file" ]; then
+        git add "$file"
+    fi
+done
