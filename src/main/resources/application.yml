@@ -3,3 +3,24 @@ springdoc:
     swagger-ui:
         path: /swagger-ui.html
         use-root-path: true
+management:
+    endpoints:
+        web:
+            exposure:
+                include: info
+    info.env.enabled: true
+    info.java.enabled: true
+    info.git.enabled: true
+    info.build.enabled: true
+    info.os.enabled: true
+spring:
+    datasource:
+        url: jdbc:postgresql://localhost:5432/test
+        username: test
+        password: test
+        driver-class-name: org.postgresql.Driver
+    jpa:
+        database-platform: org.hibernate.dialect.PostgreSQLDialect
+        hibernate:
+            ddl-auto: update
+

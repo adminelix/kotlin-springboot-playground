@@ -7,8 +7,8 @@
 - sample api
 - sample rest assured test
 - add openapi
-
 - add /info endpoint
+
 - add exceptions with error codes
 - add monads for error handling at least
 - add commit log to /info

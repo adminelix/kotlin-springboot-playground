@@ -5,6 +5,7 @@ plugins {
     id("io.spring.dependency-management") version "1.1.6"
     kotlin("plugin.jpa") version "1.9.25"
     id("org.jlleitschuh.gradle.ktlint") version "12.1.1"
+    id("com.gorylenko.gradle-git-properties") version "2.4.2"
 }
 
 group = "com.github.adminelix"
@@ -57,6 +58,10 @@ allOpen {
     annotation("jakarta.persistence.Entity")
     annotation("jakarta.persistence.MappedSuperclass")
     annotation("jakarta.persistence.Embeddable")
+}
+
+springBoot {
+    buildInfo()
 }
 
 tasks.jar {
