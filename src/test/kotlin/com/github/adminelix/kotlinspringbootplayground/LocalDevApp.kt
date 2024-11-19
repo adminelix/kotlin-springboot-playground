@@ -1,13 +1,8 @@
 package com.github.adminelix.kotlinspringbootplayground
 
-import org.junit.jupiter.api.Test
-import org.springframework.boot.test.context.SpringBootTest
-import org.springframework.context.annotation.Import
+import org.springframework.boot.fromApplication
+import org.springframework.boot.with
 
-@Import(TestcontainersConfiguration::class)
-@SpringBootTest
-class LocalDevApp {
-    @Test
-    fun contextLoads() {
-    }
+fun main(args: Array<String>) {
+    fromApplication<KotlinSpringbootPlaygroundApplication>().with(TestcontainersConfiguration::class).run(*args)
 }
