@@ -13,3 +13,8 @@
 - add monads for error handling at least
 - add commit log to /info
 - configure actuator/health with db dependency
+
+
+docker run --name postgres-container -e POSTGRES_DB=test -e POSTGRES_USER=test -e POSTGRES_PASSWORD=test -p 5432:5432 postgres:16-alpine
+
+./gradlew assemble; podman run --rm -p 8080:8080 -it $(podman build -q .)
