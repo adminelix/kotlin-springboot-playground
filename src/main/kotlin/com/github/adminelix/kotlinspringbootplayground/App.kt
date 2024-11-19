@@ -4,8 +4,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class KotlinSpringbootPlaygroundApplication
+class App
 
 fun main(args: Array<String>) {
-    runApplication<KotlinSpringbootPlaygroundApplication>(*args)
+    runApplication<App>(*args)
 }
