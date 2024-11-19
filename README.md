@@ -4,9 +4,9 @@
 - sample changelog
 - build docker image of that app
 - use jetty instead of tomcat
-
 - sample api
 - sample rest assured test
+
 - add openapi
 - add /info endpoint
 - add exceptions with error codes
