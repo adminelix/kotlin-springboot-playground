@@ -1,3 +1,5 @@
+import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
+
 plugins {
     kotlin("jvm") version "1.9.25"
     kotlin("plugin.spring") version "1.9.25"
@@ -6,6 +8,8 @@ plugins {
     kotlin("plugin.jpa") version "1.9.25"
     id("org.jlleitschuh.gradle.ktlint") version "12.1.1"
     id("com.gorylenko.gradle-git-properties") version "2.4.2"
+    id("com.github.ben-manes.versions") version "0.51.0"
+    id("se.patrikerdes.use-latest-versions") version "0.2.18"
 }
 
 group = "com.github.adminelix"
@@ -93,7 +97,24 @@ tasks.register<Copy>("installGitHooks") {
         unix("rwxr-xr-x")
     }
 }
+tasks.generateGitProperties {
+    mustRunAfter("installGitHooks")
+}
 
 tasks.assemble {
     dependsOn("installGitHooks")
+}
+
+tasks.withType<DependencyUpdatesTask> {
+    gradleReleaseChannel = "current"
+    rejectVersionIf {
+        isNonStable(candidate.version)
+    }
+}
+
+fun isNonStable(version: String): Boolean {
+    val stableKeyword = listOf("RELEASE", "FINAL", "GA").any { version.uppercase().contains(it) }
+    val regex = "^[0-9,.v-]+(-r)?$".toRegex()
+    val isStable = stableKeyword || regex.matches(version)
+    return isStable.not()
 }
