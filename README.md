@@ -8,10 +8,10 @@
 - sample rest assured test
 - add openapi
 - add /info endpoint
+- add commit log to /info
 
 - add exceptions with error codes
 - add monads for error handling at least
-- add commit log to /info
 - configure actuator/health with db dependency
 
 
