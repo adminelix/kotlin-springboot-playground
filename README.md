@@ -10,10 +10,7 @@
 - add /info endpoint
 - add commit log to /info
 - configure actuator/health with db dependency
-
-- add exceptions with error codes
-- add monads for error handling at least
-
+- global exception handler with normalized error details
 
 docker run --name postgres-container -e POSTGRES_DB=test -e POSTGRES_USER=test -e POSTGRES_PASSWORD=test -p 5432:5432 postgres:16-alpine
 
