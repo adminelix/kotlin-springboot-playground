@@ -1,0 +1,3 @@
+management.endpoint.health:
+    group.liveness.include:
+    group.readiness.include:

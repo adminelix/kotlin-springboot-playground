@@ -22,5 +22,5 @@ management:
   endpoint.health:
     show-details: when_authorized
     probes.enabled: true
-    group.liveness.include: db
+    group.liveness.include:
     group.readiness.include: db
